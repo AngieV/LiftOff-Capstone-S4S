@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<div id="header" th:replace="fragments :: header"></div>
+
+<div class="container">
+    <h1 th:text="${title}"></h1>
+
+    <h2>8th Annual Songs 4 Soldiers Benefit Concert</h2>
+    <h3>featuring Josh Turner & Night Ranger</h3>
+    <h2>September 17 & 18, 2021</h2>
+    <p>After a year's hiatus it's back and bigger than ever!</p>
+
+    <h3>September 17, 2021: featuring ALEXANDRA KAY & JOSH TURNER</h3>
+    <img src="../images/JoshTurnerPromo2021.jpeg" alt="Josh Turner Promo photo" />
+    <h3>September 18, 2021: featuring The Blue Moon Blues Band, The John Hughes Experience, Dazed N'Confused STL, Joe Dirt & the Dirty Boys, BleachSTL and NIGHT RANGER</h3>
+    <img src="../images/NightRangerPromo21_1.jpeg" alt="Night Ranger Promo photo" />
+
+</div>
+
+<div>
+    <h2>Presented by:</h2>
+    <img src="../images/weberChevrolet.png" alt="../images/Weber Chevrolet logo" /><img src="../images/budweiser.png" alt="Budweiser logo" />
+    <button type="submit" action="/tickets" class="btn btn-info">Buy Tickets</button >
+</div>
+
+<div id="footer" th:replace="fragments :: footer"></div>
+
+</body>
+</html>

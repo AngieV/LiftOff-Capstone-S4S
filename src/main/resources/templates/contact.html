@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+    <div id="header" th:replace="fragments :: header"></div>
+
+
+    <h1 th:text="${title}">Default Title</h1>
+
+    <!----------------------    DISPLAY VET ASSISTANCE FORM ---------------------->
+
+    <h2 th:text="${title_vet}">Apply for Assistance:</h2>
+    <p> Have an account? Please <a href="/S4S/login">log in</a>. Need an account? <a href="/S4S/register">Register Here</a></p>
+    <form action="contact" th:action="@{/S4S/contact}" th:object="${veteran}" method="post">
+        <p>* fields required</p>
+        <div class="form-group">
+            <label>*Name: <input type="text" th:field="${veteran.username}" class="form-control" ></label>
+            <p class="error" th:errors="${veteran.name}"></p>
+        </div>
+        <div class="form-group">
+            <label>*e-mail:<input type="text" th:field="${veteran.email}" class="form-control" ></label>
+            <p class="error" th:errors="${veteran.email}"></p>
+        </div>
+        <div>
+            <label>Phone/Cell:<input th:field="*{phone}" class="form-control"></label>
+            <p class="error" th:errors="*{phone}"></p>
+        </div>
+        <div>
+            <label>Branch of Service:</label>
+            <select th:field="*{branch}">
+                <th:block >
+                    <option th:each="branch : ${branchList}" th:value="${branch}" th:text="${branch}" />
+                </th:block>
+            </select>
+        </div>
+        <!--        <label>Start:</label><input type="date" th:field="${veteran.vet_serviceStart}" class="form-control">-->
+        <!--        <label>End:</label><input type="date" th:field="${veteran.vet_serviceEnd}" class="form-control">-->
+        <label>How can we can help you?</label><textarea rows="10" cols="75" th:field="${veteran.vet_help}" class="form-control"></textarea>
+        <p class="error" th:errors="${veteran.vet_help}"></p>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-success">
+            <input type="reset" class="btn btn-info">
+        </div>
+    </form>
+
+<div id="footer" th:replace="fragments :: footer"></div>
+
+</body>
+</html>

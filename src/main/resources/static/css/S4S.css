@@ -1,0 +1,218 @@
+  /*
+   * ©Angela Volluz 2021
+   *
+   * Webfont Kit by https://www.fontsquirrel.com/
+   * https://www.fontsquirrel.com/tools/webfont-generator
+   *
+   */
+
+     @font-face {
+         font-family: 'boston_trafficregular';
+         src: url('//src/main/resources/static/fonts/boston-webfont.woff2') format('woff2'),
+              url('//src/main/resources/static/fonts/boston-webfont.woff') format('woff');
+         font-weight: normal;
+         font-style: normal;
+     }
+
+     @font-face {
+         font-family: 'unconform_round';
+         src: url('Songs4Soldiers/src/main/resources/static/fonts/uncon___-webfont.woff2') format('woff2'),
+              url('Songs4Soldiers/src/main/resources/static/fonts/uncon___-webfont.woff') format('woff');
+         font-weight: normal;
+         font-style: normal;
+     }
+
+       body,
+       html {
+           margin: 0;
+           padding: 0;
+           width: 100%;
+           height: 100%;
+       }
+
+       img,
+       embed,
+       object,
+       video {
+             max-width: 100%;
+             padding: 10px;
+             align: center;
+             }
+
+      body {
+          font-family: sans-serif;
+          background-color: pink;
+          font-size: 14px;
+          color: black;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      h1, h2, h3,
+      h4, h5 {
+          font-family:'boston_trafficregular', "Impact", sans-serif;
+          font-weight:normal;
+          font-style:normal;
+          color: red;
+      }
+
+      ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      button {
+          min-height: 48px;
+          min-width: 48px;
+          padding: 0 10px 0 10px;
+          margin: 20px;
+      }
+
+      .error {
+        color: red;
+      }
+
+      .centered {
+        align: center;
+      }
+
+      .centered {
+        align: center;
+      }
+
+  /*
+   *
+   * Top Level Navigation
+   *
+   */
+
+      nav {
+          width: 100%;
+          font-family: sans-serif;
+          align: center;
+      }
+
+      nav li {
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 1em;
+            margin: 0;
+        }
+
+      nav .item {
+          box-sizing: border-box;
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          line-height: 24px;
+          padding: 1.5em inherit;
+      }
+
+      nav a {
+          text-decoration: none;
+          color: black;
+      }
+
+      nav a:hover {
+          text-decoration: underline;
+          color: #212121;
+      }
+
+  /*
+   *
+   * SHOP
+   *
+   */
+   img {
+        padding: 10px;
+      }
+
+   .product-entry {
+     padding: 0 5%;
+   }
+
+   .productpic {
+     float: left;
+     padding: 10px;
+     width: 200px;
+     display: none;
+   }
+
+   .product-text {
+     font-style: bold;
+     font-size: 14px;
+     line-height: 16px;
+     float: left;
+   }
+
+      .price-text {
+        font-style: italic;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 5px;
+        float: right;
+      }
+
+      .wrapper {
+         display: grid;
+         grid-template-columns: 1fr 1fr 1fr;
+       }
+
+       .box {
+          border-style: solid;
+          border-width: .2em;
+          padding: .2em;
+          margin: .1em;
+          }
+
+
+      .product-text {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 5px;
+        float: left;
+      }
+
+      .price-text {
+        font-style: italic;
+        font-size: 14px;
+        line-height: 16px;
+        padding: 5px;
+        float: right;
+      }
+
+  /*
+   *
+   * FOOTER
+   *
+   */
+
+      #footer {
+          border-top: 1px solid #E0E0E0;
+          padding: 0;
+          width: 100%;
+          align:center;
+      }
+
+      #footer li {
+          display: inline-block;
+          text-transform: uppercase;
+          padding: 0 1em;
+      }
+      #footer img{
+            min-height: 48px;
+            min-width: 48px;
+            }
+
+      #footer a {
+          margin: 5px;
+          text-decoration: none;
+          color: black;
+      }
+
+      #footer a:hover {
+            text-decoration: underline;
+            color: black;
+        }
