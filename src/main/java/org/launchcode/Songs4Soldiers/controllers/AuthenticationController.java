@@ -18,12 +18,13 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
 
+/*
+ *  Code provided by LaunchCode
+ */
+
 @Controller
 @RequestMapping("S4S")
 public class AuthenticationController {
-    /*
-     *  Code provided by LaunchCode
-     */
 
     @Autowired
     UserRepository userRepository;
