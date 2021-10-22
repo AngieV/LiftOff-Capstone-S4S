@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("S4S")
 public class S4SController {
+
     @RequestMapping("index")
     public String index(Model model){
         model.addAttribute("title", "Songs4Soldiers");

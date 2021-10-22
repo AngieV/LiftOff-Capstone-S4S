@@ -1,46 +1,63 @@
 package org.launchcode.Songs4Soldiers.models;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.Objects;
 
-@Entity
+//@Entity
 public class User {
 
     @Id
     @GeneratedValue
-    private int userID;
+    private int userId;
 
-    @NotBlank(message = "Name is required")
-    private String name;
+    @NotBlank(message = "Username is required")
+    @NotNull
+    //@Email(message = "Invalid username. Please enter a valid email.")
+    @Size(min = 3, max = 55, message = "Username must be between 7 and 55 characters long")
+    private String username;
 
-    @NotBlank(message = "Email is required")
+    @NotNull
+    private String pwHash;
+
     @Email(message = "Invalid email. Try again.")
-    //@Size(min = 7, max = 55, message = "Email must be between 7 and 55 characters long")
+    @Size(min = 7, max = 55, message = "Email must be between 7 and 55 characters long")
     private String email;
 
     @Size(min = 10, max = 12, message = "Too many digits! format: 000-555-1234")
     private String phone;
 
-    public User(int userID, String name, String email, String phone) {
-        this.userID = userID;
-        this.name = name;
+    private static final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+
+    public User(){}
+
+    public User(int userId, String username, String password, String email, String phone) {
+        this.userId = userId;
+        this.username = username;
+        this.pwHash = encoder.encode(password);
         this.email = email;
         this.phone = phone;
     }
 
-    public User(){}
+    public User (String username, String password) {
+        this.username = username;
+        this.pwHash = encoder.encode(password);
+    }
+
+    //Getters and setters
+
+    public String getUsername() {
+        return username;
+    }
+
+    public boolean isMatchingPassword(String password) {
+        return encoder.matches(password, pwHash);
+    }
 
     public int getUserID() {
-        return userID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        return userId;
     }
 
     public String getEmail() {
@@ -60,24 +77,15 @@ public class User {
     }
 
     @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return getUserID() == user.getUserID() && getEmail().equals(user.getEmail());
+        return userId == user.userId && getUsername().equals(user.getUsername()) && Objects.equals(getEmail(), user.getEmail());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getUserID(), getEmail());
+        return Objects.hash(userId, getUsername(), getEmail());
     }
 }
