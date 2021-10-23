@@ -1,3 +1,4 @@
+
 package org.launchcode.Songs4Soldiers.controllers;
 
 import org.launchcode.Songs4Soldiers.data.UserRepository;
@@ -17,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping("S4S")
+@RequestMapping("/S4S")
 public class FormsController {
 
     @Autowired

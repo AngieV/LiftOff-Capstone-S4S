@@ -4,6 +4,8 @@ import org.launchcode.Songs4Soldiers.data.UserRepository;
 import org.launchcode.Songs4Soldiers.models.DTO.LoginFormDTO;
 import org.launchcode.Songs4Soldiers.models.DTO.RegisterFormDTO;
 import org.launchcode.Songs4Soldiers.models.User;
+import org.launchcode.Songs4Soldiers.models.Veteran;
+import org.launchcode.Songs4Soldiers.models.Volunteer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 /*
@@ -23,7 +27,7 @@ import java.util.Optional;
  */
 
 @Controller
-@RequestMapping("S4S")
+@RequestMapping("/S4S")
 public class AuthenticationController {
 
     @Autowired

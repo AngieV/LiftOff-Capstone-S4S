@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
-//@Entity
+@Entity
 public class Veteran extends User{
 
     private String branch;
